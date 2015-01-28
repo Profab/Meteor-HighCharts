@@ -11,11 +11,13 @@ meteor add maazalik:highcharts
 The plugin comes with a helper that can be used to quickly generate charts
 
 ```
-// myTempmlate.html
-{{> highchartsHelper chartId="test" chartWidth="100%" charHeight="100%" chartObject=topGenresChart}}
+// myTemplate.html
+{{> highchart style="width:100%;height:100%" class="whatever" id="test" options=topGenresChart}}
 ```
 
-The `chartObject` basically takes the object that you would normall define using highCharts, example below:
+You can put any attribute on the ```{{> highchart}}``` as if it was an HTML tag, however, an ```id``` (string) attribute and ```options``` (object) attribute is _REQUIRED_, if not, a ```console.log``` will complain at you.
+
+The `chartObject` basically takes the object that you would normally define using highCharts, example below:
 
 ```
 // myTemplate.js
@@ -27,7 +29,7 @@ Template.myTemplate.topGenresChart = function() {
 			plotShadow: false
 		},
 		title: {
-			text: this.username + "'s top genres"
+			text: "Bob's top genres"
 		},
 		tooltip: {
 			pointFormat: '<b>{point.percentage:.1f}%</b>'
