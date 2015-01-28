@@ -3,7 +3,7 @@
 Add to your Meteor app
 
 ```
-meteor add maazalik:highcharts
+meteor add profab:highcharts
 ```
 
 ## Instructions
